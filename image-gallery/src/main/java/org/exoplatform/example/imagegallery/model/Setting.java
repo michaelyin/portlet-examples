@@ -18,13 +18,13 @@
  */
 package org.exoplatform.example.imagegallery.model;
 
-import org.juzu.Param;
+import juzu.Param;
 
 /**
  * @author <a href="nguyenanhkien2a@gmail.com">Kien Nguyen</a>
  * @version $Revision$
  */
-@Param
+//@Param
 public class Setting
 {
    private String path;

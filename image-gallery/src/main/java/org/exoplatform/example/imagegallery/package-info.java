@@ -1,18 +1,26 @@
-@Application(defaultController = org.exoplatform.example.imagegallery.ImageGalleryApplication.class)
-@Assets(
-   scripts = {
-      @Script(id = "jquery", src = "/js/jquery.js"),
-      @Script(src = "/js/bootstrap-carousel.js"),
-      @Script(src = "/js/gallery.js")
-   },
-   stylesheets = {
-      @Stylesheet(src = "/css/bootstrap.css"),
-      @Stylesheet(src = "/css/gallery.css")
-   }
+@juzu.Application(defaultController = org.exoplatform.example.imagegallery.ImageGalleryApplication.class)
+
+@juzu.plugin.asset.Assets("*")
+
+@Scripts 
+(
+    {
+      @Script(id = "jquery", value = "js/jquery.js"),
+      @Script(value = "js/bootstrap-carousel.js", id="bootstrap-carousel", depends="jquery"),
+      @Script(value = "js/gallery.js", depends = {"jquery", "bootstrap-carousel"}, location=AssetLocation.APPLICATION)
+    }
 )
+
+@Stylesheets ({
+    
+    @Stylesheet(value = "css/bootstrap.css", location = AssetLocation.SERVER, id="bootstrap"),
+    @Stylesheet(value = "css/gallery.css", location = AssetLocation.SERVER)
+})
+
 package org.exoplatform.example.imagegallery;
 
-import org.juzu.Application;
-import org.juzu.plugin.asset.Assets;
-import org.juzu.plugin.asset.Script;
-import org.juzu.plugin.asset.Stylesheet;
+import juzu.asset.AssetLocation;
+import juzu.plugin.asset.Script;
+import juzu.plugin.asset.Scripts;
+import juzu.plugin.asset.Stylesheet;import juzu.plugin.asset.Stylesheets;
+

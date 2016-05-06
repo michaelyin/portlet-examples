@@ -21,10 +21,13 @@ package org.exoplatform.example.imagegallery;
 import org.exoplatform.example.imagegallery.model.Image;
 import org.exoplatform.example.imagegallery.model.ImageGallery;
 import org.exoplatform.example.imagegallery.model.Setting;
-import org.juzu.Action;
-import org.juzu.Path;
-import org.juzu.Response;
-import org.juzu.View;
+
+import juzu.Action;
+import juzu.Path;
+import juzu.Response;
+import juzu.View;
+import juzu.request.RequestContext;
+import juzu.request.RequestLifeCycle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,29 +41,29 @@ import javax.portlet.PortletPreferences;
  */
 public class ImageGalleryApplication
 {
-   @Path("gallery.gtmpl")
    @Inject
+   @Path("gallery.gtmpl")
    org.exoplatform.example.imagegallery.templates.gallery galleryGtmpl;
    
-   @Path("setting.gtmpl")
    @Inject
+   @Path("setting.gtmpl")
    org.exoplatform.example.imagegallery.templates.setting settingGtmpl;
    
    @Inject
    PortletPreferences preferences;
    
    @View
-   public void index()
+   public Response.Content index()
    {
       //boolean settingView = Boolean.parseBoolean(preferences.getValue("settingView", "false"));
       
-      galleryGtmpl.with().gallery(new ImageGallery(getImages(null))).render();
+      return galleryGtmpl.with().gallery(new ImageGallery(getImages(null))).ok();
    }
    
    @View
-   public void setting()
+   public Response.Content setting()
    {
-      settingGtmpl.render();
+      return settingGtmpl.ok();
    }
    
    @Action
@@ -86,4 +89,6 @@ public class ImageGalleryApplication
       filenames.add(new Image("http://localhost:8080/image-gallery/img/5.jpg"));
       return filenames;
    }
+
+
 }
