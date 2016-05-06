@@ -16,11 +16,17 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.exoplatform.example.video.controller;
+package org.exoplatform.example.video;
+
+import java.io.IOException;
 
 import org.exoplatform.example.video.model.Video;
-import org.juzu.Path;
-import org.juzu.View;
+
+import juzu.Path;
+import juzu.Response;
+import juzu.SessionScoped;
+import juzu.View;
+import juzu.template.Template;
 
 import javax.inject.Inject;
 import javax.portlet.PortletPreferences;
@@ -29,16 +35,18 @@ import javax.portlet.PortletPreferences;
  * @author <a href="kienna@exoplatform.com">Kien Nguyen</a>
  * @version $Revision$
  */
+//@SessionScoped
 public class VideoApplication
 {
-   @Inject @Path("player.gtmpl")
+   @Inject 
+   @Path("player.gtmpl")
    org.exoplatform.example.video.templates.player playerGtmpl;
    
    @Inject
    PortletPreferences preferences;
    
    @View
-   public void index()
+   public Response.Content index() throws IOException
    {
       String url = preferences.getValue("url", "http://player.vimeo.com/video/6438918");
       String width = preferences.getValue("width", "100%");
@@ -47,6 +55,7 @@ public class VideoApplication
       video.setWidth(width);
       video.setHeight(height);
       
-      playerGtmpl.with().video(video).render();
+      return playerGtmpl.with().video(video).ok();
    }
+   
 }
