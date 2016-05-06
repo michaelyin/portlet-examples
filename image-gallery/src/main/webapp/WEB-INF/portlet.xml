@@ -27,22 +27,16 @@
    <portlet>
       <portlet-name>ImageGallery</portlet-name>
       <display-name xml:lang="EN">Image Gallery</display-name>
-      <portlet-class>org.juzu.portlet.JuzuPortlet</portlet-class>
+      <portlet-class>juzu.bridge.portlet.JuzuPortlet</portlet-class>
       <init-param>
-         <name>juzu.run_mode</name>
-         <value>dev</value>
-      </init-param>
-      <init-param>
-         <name>juzu.inject</name>
-         <value>weld</value>
-      </init-param>
-      <init-param>
-      		<name>juzu.src_path</name>
-      		<value>/home/kiennguyen/java/eXoProjects/kiennguyen/portlet-examples/image-gallery/src/main/java</value>
-      </init-param>
+       <name>juzu.app_name</name>
+       <value>org.exoplatform.example.imagegallery</value>
+     </init-param>
       <supports>
          <mime-type>text/html</mime-type>
+         <portlet-mode>edit</portlet-mode>
       </supports>
+      <resource-bundle>locale.portlet.juzcret</resource-bundle>
       <portlet-info>
          <title>Image Gallery</title>
          <keywords>gallery</keywords>
