@@ -12,9 +12,8 @@
 )
 
 @Stylesheets ({
-    
-    @Stylesheet(value = "css/bootstrap.css", location = AssetLocation.SERVER, id="bootstrap"),
-    @Stylesheet(value = "css/gallery.css", location = AssetLocation.SERVER)
+    @Stylesheet(value = "css/bootstrap.css", location = AssetLocation.APPLICATION, id="bootstrap"),
+    @Stylesheet(value = "css/gallery.css", location = AssetLocation.APPLICATION)
 })
 
 package org.exoplatform.example.imagegallery;
