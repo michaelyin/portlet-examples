@@ -110,16 +110,11 @@
 
 		<!-- Hibernate core library dependecy end -->
 
-		<dependency>
-			<groupId>org.exoplatform.kernel</groupId>
-			<artifactId>exo.kernel.container</artifactId>
-			<version>2.3.6-GA</version>
-			<scope>provided</scope>
-		</dependency>
+		
 	</dependencies>
 
 	<properties>
-		<spring.version>3.1.1.RELEASE</spring.version>
+		<spring.version>4.0.4.RELEASE</spring.version>
 		<hibernate.version>3.6.3.Final</hibernate.version>
 	</properties>
 
