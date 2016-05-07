@@ -2,69 +2,67 @@ package com.exoplatform.customerms.model;
 
 import java.util.Date;
 
-public class Customer implements java.io.Serializable
-{
+public class Customer{
 
-   private long customerId;
+	private long customerId;
 
-   private String name;
+	private String name;
 
-   private String address;
-   
-   private String cardId;
+	private String address;
 
-   private Date createdDate;
+	private String cardId;
 
-   public Customer()
-   {
-   }
+	private Date createdDate;
 
-   public Customer(long customerId, String name, String address, Date createdDate)
-   {
-      this.customerId = customerId;
-      this.name = name;
-      this.address = address;
-      this.createdDate = createdDate;
-   }
+	public Customer() {
+	}
 
-   public long getCustomerId()
-   {
-      return this.customerId;
-   }
+	public Customer(long customerId, String name, String address,
+			Date createdDate) {
+		this.customerId = customerId;
+		this.name = name;
+		this.address = address;
+		this.createdDate = createdDate;
+	}
 
-   public void setCustomerId(long customerId)
-   {
-      this.customerId = customerId;
-   }
+	public long getCustomerId() {
+		return this.customerId;
+	}
 
-   public String getName()
-   {
-      return this.name;
-   }
+	public void setCustomerId(long customerId) {
+		this.customerId = customerId;
+	}
 
-   public void setName(String name)
-   {
-      this.name = name;
-   }
+	public String getName() {
+		return this.name;
+	}
 
-   public String getAddress()
-   {
-      return this.address;
-   }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-   public void setAddress(String address)
-   {
-      this.address = address;
-   }
+	public String getAddress() {
+		return this.address;
+	}
 
-   public Date getCreatedDate()
-   {
-      return this.createdDate;
-   }
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
-   public void setCreatedDate(Date createdDate)
-   {
-      this.createdDate = createdDate;
-   }
+	public Date getCreatedDate() {
+		return this.createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public String getCardId() {
+		return cardId;
+	}
+
+	public void setCardId(String cardId) {
+		this.cardId = cardId;
+	}
 
 }
