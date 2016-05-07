@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<portlet-app
-	version="1.0"
-	xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"
-	id="CustomerMS">
-
-	<portlet id="CustomerMSPortlet">
-		<description xml:lang="EN">Customer management systeom</description>
+<portlet-app xmlns='http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:schemaLocation='http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd'
+	version='2.0'>
+	
+	<portlet>
 		<portlet-name>CustomerMS</portlet-name>
 		<display-name xml:lang="EN">CustomerMS</display-name>
-    
 		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+		
+		<init-param>
+			<name>contextConfigLocation</name>
+			<value>/WEB-INF/CustomerMS-portlet.xml</value>
+		</init-param>
 
 		<expiration-cache>0</expiration-cache>
 
@@ -26,8 +26,6 @@
 
 		<portlet-info>
 			<title>CustomerMS</title>
-			<short-title>CustomerMS</short-title>
-			<keywords>CustomerMS</keywords>
 		</portlet-info>
 	</portlet>
   
